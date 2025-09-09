@@ -9,10 +9,10 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-
+import carsReducer from "./cars/slice"
 export const store = configureStore({
   reducer: {
-
+cars: carsReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
