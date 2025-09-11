@@ -1,9 +1,15 @@
 import React from 'react'
+import Logo from '../logo/Logo'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
   return (
     <div>
-      Header
+      <Logo/>
+      <nav>
+        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/catalog"}>Catalog</NavLink>
+      </nav>
     </div>
   )
 }

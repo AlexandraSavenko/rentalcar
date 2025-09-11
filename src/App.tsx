@@ -14,10 +14,6 @@ function App() {
 <Route path="/catalog/:id" element={<MainPage/>} />
     </Routes>
   </Layout>
-    <h1>
-      rentalcars
-    </h1>
-    <MainPage/>
     </>
   )
 }

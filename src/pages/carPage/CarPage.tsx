@@ -1,18 +1,7 @@
-import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { getAllCars } from '../../redux/cars/operations'
-import { type AppDispatch } from '../../redux/store'
-import CarsList from '../../components/carsList/CarsList'
+import React from 'react'
+
 const CarPage = () => {
-  const dispatch = useDispatch<AppDispatch>()
-  useEffect(() => {
-    dispatch(getAllCars())
-  },[])
-  return (
-    <div>
-      <CarsList/>
-    </div>
-  )
+
 }
 
 export default CarPage

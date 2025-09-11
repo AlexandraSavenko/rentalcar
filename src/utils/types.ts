@@ -1,3 +1,7 @@
+export interface LayoutProps {
+  children: React.ReactNode
+}
+
 export interface Car {
   id: string;
   year: number;
