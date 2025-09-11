@@ -1,14 +1,16 @@
 import React from 'react'
 import Logo from '../logo/Logo'
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
+import css from "./Header.module.css"
+import clsx from 'clsx';
 
 const Header = () => {
   return (
-    <div>
+    <div className={`${css.headerWrap} container`}>
       <Logo/>
       <nav>
-        <NavLink to={"/"}>Home</NavLink>
-        <NavLink to={"/catalog"}>Catalog</NavLink>
+        <NavLink className={({ isActive }) => clsx(isActive && css.active, css.link) } to={"/"}>Home</NavLink>
+        <NavLink className={({ isActive }) => clsx(isActive && css.active, css.link)} to={"/catalog"}>Catalog</NavLink>
       </nav>
     </div>
   )
