@@ -1,11 +1,14 @@
 import './App.css'
+import MainPage from './pages/mainPage/MainPage'
 
 function App() {
 
-  return (
+  return (<>
     <h1>
       rentalcars
     </h1>
+    <MainPage/>
+    </>
   )
 }
 

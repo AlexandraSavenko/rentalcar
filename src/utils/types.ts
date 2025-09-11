@@ -19,6 +19,13 @@ export interface Car {
 
 export interface CarsInitialState {
     allCars: Car[],
+    page: number,
+    totalCars: number,
+    totalPages: number,
     isLoading: boolean,
     error: null
+}
+
+export interface carCardProps {
+  car: Car
 }

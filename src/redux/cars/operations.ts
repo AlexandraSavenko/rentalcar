@@ -5,7 +5,8 @@ axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 export const getAllCars = createAsyncThunk("cars/all", async() => {
     try {
        const res = await axios.get("/cars"); 
-       console.log(res)
+    //    console.log(res)
+       return res.data
     } catch (error) {
         console.log(error)
     }
