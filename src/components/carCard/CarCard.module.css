@@ -1,3 +1,6 @@
+.cardWrap{
+  border: 1px solid red;
+}
 .imgWrap{
     border-radius: 14px;
 width: 276px;
@@ -9,4 +12,49 @@ height: 268px;
     height: 100%;
     border-radius: 8px;
   object-fit: cover;
+}
+.lone{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.ltwo, .lthree{
+  display: flex;
+}
+.brand{ 
+font-weight: 500;
+font-size: 16px;
+color: var(--main);}
+
+.brand span:nth-child(1){
+  color: var(--button);
+}
+
+.company, .type, .miles{
+  font-family: var(--font-family);
+font-weight: 400;
+font-size: 12px;
+line-height: 133%;
+color: var(--gray);
+display: flex;
+align-items: center;
+}
+
+.company::after, .type::after, .miles::after{
+    display: inline-block;
+  content: "";
+  width: 1px;
+  height: 1em;
+  background-color: var(--gray);
+  margin-left: 6px;
+  margin-right: 6px;
+}
+.link{
+  display: block;
+  border-radius: 12px;
+  text-align: center;
+padding: 12px;
+width: 276px;
+height: 44px;
+background: var(--button);
 }

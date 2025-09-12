@@ -5,15 +5,21 @@ import { Link } from 'react-router-dom'
 
 const CarCard: React.FC<carCardProps> = ({car: {img, type, year, model, brand, rentalPrice, id, rentalCompany, mileage}}) => {
   return (
-    <div>
+    <div className={css.cardWrap}>
       <div className={css.imgWrap}>
       <img src={img} alt={type} /></div>
-      <p>{brand} <span>{model}</span> <span>{year}</span> </p>
-<p>{`$${rentalPrice}`}</p>
-<p>{rentalCompany}</p>
-<p>{type}</p>
-<p>{mileage}</p>
-      <Link to={`/catalog/:${id}`}>Learn more</Link>
+      <div className={css.lone}>
+      <p className={css.brand}>{brand} <span>{model}</span>, <span>{year}</span> </p>
+  <p className={css.price}>{`$${rentalPrice}`}</p>
+</div>
+<div className={css.ltwo}>
+<p className={css.company}>{rentalCompany}</p>
+</div>
+
+<div className={css.lthree}>
+<p className={css.type}>{type}</p>
+<p className={css.miles}>{mileage} km</p></div>
+      <Link className={css.link} to={`/catalog/:${id}`}>Read more</Link>
     </div>
   )
 }

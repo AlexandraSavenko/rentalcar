@@ -10,7 +10,7 @@ const CatalogPage = () => {
     dispatch(getAllCars())
   },[])
   return (
-    <div>
+    <div className={`container`}>
       <CarsList/>
     </div>
   )
