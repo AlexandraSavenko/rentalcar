@@ -43,8 +43,9 @@ export interface BrandsInitialState {
     isLoading: boolean,
 }
 
-export interface FilterInputProps {
+export interface FilterSelectProps {
   name: string,
   filter: string[],
-  onChange: () => void
+  value: string,
+  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
 }
