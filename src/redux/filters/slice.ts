@@ -8,6 +8,12 @@ export const slice = createSlice({
   reducers: {
     changeBrandFilter: (state, action) => {
         state.thisBrand = action.payload
+    },
+    resetFilters: (state) => {
+      state.thisBrand = "";
+    // state.thisPrice = 0;
+    // state.milesFrom = 0;
+    // state.milesTo = 0;
     }
   },
   extraReducers: (builder) =>
@@ -24,4 +30,4 @@ export const slice = createSlice({
 });
 
 export default slice.reducer;
-export const {changeBrandFilter} = slice.actions
+export const {changeBrandFilter, resetFilters} = slice.actions

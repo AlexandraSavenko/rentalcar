@@ -18,3 +18,12 @@ export const filtersInitialState: BrandsInitialState = {
     isLoading: false,
     
 }
+
+export interface CarFilterParams {
+  brand?: string;
+  rentalPrice?: string;
+  minMileage?: string;
+  maxMileage?: string;
+  limit?: string;
+  page?: string;
+}
