@@ -3,7 +3,8 @@ import type { carCardProps } from '../../utils/types'
 import css from './CarCard.module.css'
 import { Link } from 'react-router-dom'
 
-const CarCard: React.FC<carCardProps> = ({car: {img, type, year, model, brand, rentalPrice, id, rentalCompany, mileage}}) => {
+const CarCard: React.FC<carCardProps> = ({car: {img, type, year, model, brand, rentalPrice, id, rentalCompany, mileage, address}}) => {
+  const whereFrom = address.split(",").slice(-2).join()
   return (
     <div className={css.cardWrap}>
       <div className={css.imgWrap}>
@@ -13,6 +14,7 @@ const CarCard: React.FC<carCardProps> = ({car: {img, type, year, model, brand, r
   <p className={css.price}>{`$${rentalPrice}`}</p>
 </div>
 <div className={css.ltwo}>
+<p className={css.whereFrom}>{whereFrom}</p>
 <p className={css.company}>{rentalCompany}</p>
 </div>
 

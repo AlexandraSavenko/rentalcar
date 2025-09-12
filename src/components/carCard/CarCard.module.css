@@ -1,10 +1,10 @@
 .cardWrap{
-  border: 1px solid red;
 }
 .imgWrap{
     border-radius: 14px;
 width: 276px;
 height: 268px;
+margin-bottom: 16px;
 }
 
 .imgWrap img{
@@ -30,7 +30,7 @@ color: var(--main);}
   color: var(--button);
 }
 
-.company, .type, .miles{
+.company, .type, .miles, .whereFrom{
   font-family: var(--font-family);
 font-weight: 400;
 font-size: 12px;
@@ -40,7 +40,7 @@ display: flex;
 align-items: center;
 }
 
-.company::after, .type::after, .miles::after{
+.company::after, .type::after, .miles::after, .whereFrom::after{
     display: inline-block;
   content: "";
   width: 1px;
@@ -57,4 +57,10 @@ padding: 12px;
 width: 276px;
 height: 44px;
 background: var(--button);
+margin-top: 28px;
+font-family: var(--font-family);
+font-weight: 600;
+font-size: 16px;
+line-height: 125%;
+color: var(--white);
 }

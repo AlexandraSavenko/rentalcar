@@ -1,6 +1,6 @@
 .mainWrap{
     width: 100%;
-    height: calc(100vh - 24px) ;
+    height: calc(100vh - 76px) ;
     background-image: url("/public/banner-min.png");
     background-repeat: no-repeat;
     background-size: cover;
