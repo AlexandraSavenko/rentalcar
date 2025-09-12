@@ -33,3 +33,18 @@ export interface CarsInitialState {
 export interface carCardProps {
   car: Car
 }
+
+export interface BrandsInitialState {
+  thisBrand: string,
+    thisPrice: number,
+    milesFrom: number,
+    milesTo: number,
+    brands: string[],
+    isLoading: boolean,
+}
+
+export interface FilterInputProps {
+  name: string,
+  filter: string[],
+  onChange: () => void
+}
