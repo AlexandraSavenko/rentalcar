@@ -21,7 +21,7 @@ const CarCard: React.FC<carCardProps> = ({car: {img, type, year, model, brand, r
 <div className={css.lthree}>
 <p className={css.type}>{type}</p>
 <p className={css.miles}>{mileage} km</p></div>
-      <Link className={css.link} to={`/catalog/:${id}`}>Read more</Link>
+      <Link className={css.link} to={`/catalog/${id}`}>Read more</Link>
     </div>
   )
 }

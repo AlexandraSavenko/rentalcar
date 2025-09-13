@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { filtersInitialState } from "../../utils/initialStates";
 import { getBrands } from "./operations";
 
+
 export const slice = createSlice({
   name: "filters",
   initialState: filtersInitialState,
