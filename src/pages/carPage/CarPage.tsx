@@ -12,12 +12,6 @@ const CarPage = () => {
   const whereFrom = car?.address.split(",").slice(-2).join();
   const RC = car?.rentalConditions ?? [];
   const AandF = [...(car?.accessories ?? []), ...(car?.functionalities ?? [])];
-  const carSp = [
-    `Year: ${car?.year}`,
-    `Type: ${car?.type}`,
-    `Fuel Consumption: ${car?.fuelConsumption}`,
-    `Engine Size: ${car?.engineSize}`,
-  ];
   const { id } = useParams();
   console.log("carPage: ", car);
   useEffect(() => {
@@ -36,7 +30,13 @@ const CarPage = () => {
           {car.brand} {car.model}, {car.year}
         </h3>
         <div className={css.originandage}>
+          <div className={css.whereFrom}>
+            <svg className={css.icon}>
+                      <use href={`/icons.svg#icon-Location`}></use>
+                    </svg>
           <p>{whereFrom}</p>
+          </div>
+          
           <p>Mileage: {car.mileage} km</p>
         </div>
         <p className={css.price}>$ {car.rentalPrice}</p>
@@ -59,14 +59,30 @@ const CarPage = () => {
           <div className={css.list}>
             <h3>Car Specifications:</h3>
             <ul>
-              {carSp.map((el, i) => (
-                <li key={i}>
-                  <svg className={css.icon}>
-                    <use href={`/icons.svg#icon-check-circle`}></use>
-                  </svg>
-                  <p>{el}</p>
-                </li>
-              ))}
+              <li>
+                <svg className={css.icon}>
+                      <use href={`/icons.svg#icon-calendar`}></use>
+                    </svg>
+                <p>Year: {car.year}</p>
+              </li>
+              <li>
+                <svg className={css.icon}>
+                      <use href={`/icons.svg#icon-car`}></use>
+                    </svg>
+                <p>Type: {car.type}</p>
+              </li>
+              <li>
+                <svg className={css.icon}>
+                      <use href={`/icons.svg#icon-fuel-pump`}></use>
+                    </svg>
+                <p>Fuel Consumption: {car.fuelConsumption}</p>
+              </li>
+              <li>
+                <svg className={css.icon}>
+                      <use href={`/icons.svg#icon-Group`}></use>
+                    </svg>
+                <p>Engine Size: {car.engineSize}</p>
+              </li>
             </ul>
           </div>
 
