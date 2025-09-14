@@ -12,6 +12,12 @@ const CarPage = () => {
   const whereFrom = car?.address.split(",").slice(-2).join();
   const RC = car?.rentalConditions ?? [];
   const AandF = [...(car?.accessories ?? []), ...(car?.functionalities ?? [])];
+  const carSp = [
+    `Year: ${car?.year}`,
+    `Type: ${car?.type}`,
+    `Fuel Consumption: ${car?.fuelConsumption}`,
+    `Engine Size: ${car?.engineSize}`,
+  ];
   const { id } = useParams();
   console.log("carPage: ", car);
   useEffect(() => {
@@ -36,41 +42,48 @@ const CarPage = () => {
         <p className={css.price}>$ {car.rentalPrice}</p>
         <p className={css.description}>{car.description}</p>
         <div className={css.listsWrap}>
-            <div className={css.list}>
-
-<h3>Rentsl Conditions:</h3>
-          <ul>{RC.length > 0 && RC.map((el, i) => <li key={i}>{el}</li>)}</ul>
-
-            </div>
           <div className={css.list}>
-
-<h3>Car Specifications:</h3>
-          <ul>
-            <li>
-              <span>Year: {car.year}</span>
-            </li>
-            <li>
-              <span>Type: {car.type}</span>
-            </li>
-            <li>
-              <span>Fuel Consumption: {car.fuelConsumption}</span>
-            </li>
-            <li>
-              <span>Engine Size: {car.engineSize}</span>
-            </li>
-          </ul>
-
-            </div>
-          
+            <h3>Rentsl Conditions:</h3>
+            <ul>
+              {RC.length > 0 &&
+                RC.map((el, i) => (
+                  <li key={i}>
+                    <svg className={css.icon}>
+                      <use href={`/icons.svg#icon-check-circle`}></use>
+                    </svg>
+                    <p>{el}</p>
+                  </li>
+                ))}
+            </ul>
+          </div>
           <div className={css.list}>
+            <h3>Car Specifications:</h3>
+            <ul>
+              {carSp.map((el, i) => (
+                <li key={i}>
+                  <svg className={css.icon}>
+                    <use href={`/icons.svg#icon-check-circle`}></use>
+                  </svg>
+                  <p>{el}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-<h3>Accessories and functionalities:</h3>
-          <ul>
-            {AandF.length > 0 && AandF.map((el, i) => <li key={i}>{el}</li>)}
-          </ul>
-
-            </div>
-          
+          <div className={css.list}>
+            <h3>Accessories and functionalities:</h3>
+            <ul>
+              {AandF.length > 0 &&
+                AandF.map((el, i) => (
+                  <li key={i}>
+                    <svg className={css.icon}>
+                      <use href={`/icons.svg#icon-check-circle`}></use>
+                    </svg>
+                    <p>{el}</p>
+                  </li>
+                ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
