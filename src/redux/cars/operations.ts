@@ -28,7 +28,6 @@ export const getAllCars = createAsyncThunk<Car[], CarFilterParams>("cars/all", a
 
 export const getCarDetails = createAsyncThunk("cars/one", 
   async (id: string, thunkAPI) => {
-    console.log(id)
       try {
         const res = await axios.get(`/cars/${id}`);
 return res.data
