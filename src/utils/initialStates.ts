@@ -2,6 +2,7 @@ import type { BrandsInitialState, CarsInitialState } from "./types";
 
 export const carsInitialState: CarsInitialState = {
     allCars: [],
+    favorites: [],
     carDetails: null,
     page: 1,
     totalCars: 1,

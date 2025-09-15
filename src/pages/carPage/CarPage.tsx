@@ -13,7 +13,6 @@ const CarPage = () => {
   const RC = car?.rentalConditions ?? [];
   const AandF = [...(car?.accessories ?? []), ...(car?.functionalities ?? [])];
   const { id } = useParams();
-  console.log("carPage: ", car);
   useEffect(() => {
     if (id) dispatch(getCarDetails(id));
   }, [id, dispatch]);

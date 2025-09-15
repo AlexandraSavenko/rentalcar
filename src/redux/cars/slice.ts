@@ -5,7 +5,14 @@ import { getAllCars, getCarDetails } from "./operations";
 export const slice = createSlice({
   name: "cars",
   initialState: carsInitialState,
-  reducers: {},
+  reducers: {
+    addToFav: (state, action) => {
+      state.favorites = [...state.favorites, action.payload]
+    },
+    deleteFromFav: (state, action) => {
+      state.favorites = state.favorites.filter(el => el != action.payload)
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getAllCars.pending, (state) => {

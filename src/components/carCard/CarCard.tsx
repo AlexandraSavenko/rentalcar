@@ -8,7 +8,11 @@ const CarCard: React.FC<carCardProps> = ({car: {img, type, year, model, brand, r
   return (
     <div className={css.cardWrap}>
       <div className={css.imgWrap}>
-      <img src={img} alt={type} /></div>
+      <img src={img} alt={type} />
+      <svg className={css.icon}>
+                      <use href={`/icons.svg#icon-fav`}></use>
+                    </svg>
+      </div>
       <div className={css.lone}>
       <p className={css.brand}>{brand} <span>{model}</span>, <span>{year}</span> </p>
   <p className={css.price}>{`$${rentalPrice}`}</p>

@@ -23,6 +23,7 @@ export interface Car {
 
 export interface CarsInitialState {
     allCars: Car[],
+    favorites: string[]
     carDetails: Car | null,
     page: number,
     totalCars: number,

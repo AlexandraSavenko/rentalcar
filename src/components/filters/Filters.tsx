@@ -8,15 +8,23 @@ import type { AppDispatch } from '../../redux/store'
 
 
 
+
 const Filters = () => {
   const [selectedBrand, setselectedBrand] = useState("");
+  const [selectedPrice, setSelectedPrice] = useState("")
 const brands = useSelector(selectBrands)
+const prices = new Array(8).map(el => el+=10)
 const dispatch = useDispatch<AppDispatch>()
 
 useEffect(() => {
       dispatch(getBrands())
 }, [])
 const handleDispatchBrand = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const filterValue = e.target.value;
+  setselectedBrand(filterValue)
+dispatch(changeBrandFilter(filterValue))
+}
+const handleDispatchPrice = (e: React.ChangeEvent<HTMLSelectElement>) => {
   const filterValue = e.target.value;
   setselectedBrand(filterValue)
 dispatch(changeBrandFilter(filterValue))
@@ -29,6 +37,7 @@ const handleResetFilters = () => {
   return (
     <>
       <FilterInput name="brand" filter={brands} value={selectedBrand} onChange={handleDispatchBrand}/>
+      <FilterInput name="price" filter={prices} value={selectedBrand} onChange={handleDispatchPrice}/>
     <button onClick={handleResetFilters}>Reset Filters</button>
     </>
   )
