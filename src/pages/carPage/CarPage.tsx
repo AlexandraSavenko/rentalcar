@@ -5,6 +5,7 @@ import type { AppDispatch } from "../../redux/store";
 import { useParams } from "react-router-dom";
 import { selectCarDetails } from "../../redux/cars/selectors";
 import css from "./CarPage.module.css";
+import FavButton from "../../components/favButton/FavButton";
 
 const CarPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -23,6 +24,7 @@ const CarPage = () => {
     <div className={`${css.carWrap} container`}>
       <div className={css.imageWrap}>
         <img src={car.img} alt={car.description} />
+       { id && <FavButton id={id}/>}
       </div>
       <div className={css.infoWrap}>
         <h3>

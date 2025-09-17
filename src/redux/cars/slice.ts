@@ -42,3 +42,4 @@ export const slice = createSlice({
 });
 
 export default slice.reducer;
+export const {addToFav,deleteFromFav} = slice.actions;

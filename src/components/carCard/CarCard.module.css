@@ -66,10 +66,21 @@ line-height: 125%;
 color: var(--white);
 }
 
+/* .favBtn{
+position: absolute;
+right: 16px;
+top: 16px;
+}
 .icon{
-  position: absolute;
+  
   width: 16px;
   height: 16px;
   stroke: var(--white);
-  right: 0;
+  
 }
+
+.isFav{
+  stroke: var(--button);
+  fill: var(--button);
+  background-color: var(--button);
+} */

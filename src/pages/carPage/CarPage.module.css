@@ -5,6 +5,7 @@
 }
 .imageWrap, .infoWrap{
     flex-grow: 1;
+    position: relative;
 }
 
 .imageWrap img{

@@ -20,6 +20,7 @@
 
 a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 ul, ol {
@@ -28,6 +29,8 @@ ul, ol {
 
 button {
 border: none;
+background: none;
+cursor: pointer;
 }
 
 .container{
