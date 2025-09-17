@@ -38,7 +38,7 @@ export interface carCardProps {
 
 export interface BrandsInitialState {
   thisBrand: string,
-    thisPrice: number,
+    thisPrice: string,
     milesFrom: number,
     milesTo: number,
     brands: string[],
@@ -50,4 +50,13 @@ export interface FilterSelectProps {
   filter: string[],
   value: string,
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void
+}
+
+export interface CarFilterParams {
+  brand?: string;
+  rentalPrice?: string;
+  minMileage?: string;
+  maxMileage?: string;
+  limit?: string;
+  page?: string;
 }

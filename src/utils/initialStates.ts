@@ -13,7 +13,7 @@ export const carsInitialState: CarsInitialState = {
 
 export const filtersInitialState: BrandsInitialState = {
     thisBrand: "",
-    thisPrice: 0,
+    thisPrice: "0",
     milesFrom: 0,
     milesTo: 0,
     brands: [],
@@ -21,11 +21,3 @@ export const filtersInitialState: BrandsInitialState = {
     
 }
 
-export interface CarFilterParams {
-  brand?: string;
-  rentalPrice?: string;
-  minMileage?: string;
-  maxMileage?: string;
-  limit?: string;
-  page?: string;
-}

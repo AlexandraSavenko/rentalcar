@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { type Car } from "../../utils/types";
-import type { CarFilterParams } from "../../utils/initialStates";
+import { type Car, type CarFilterParams } from "../../utils/types";
+
 
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
@@ -9,6 +9,7 @@ axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 export const getAllCars = createAsyncThunk<Car[], CarFilterParams>("cars/all", async(params, thunkAPI) => {
     try {
         const {brand, rentalPrice, minMileage, maxMileage, limit, page} = params;
+        // console.log(rentalPrice)
         const query = new URLSearchParams({
             ...(brand && {brand}),
             ...(rentalPrice && {rentalPrice}),
@@ -32,7 +33,7 @@ export const getCarDetails = createAsyncThunk("cars/one",
         const res = await axios.get(`/cars/${id}`);
 return res.data
       } catch (error) {
-    // return thunkAPI.rejectWithValue(error);
+    return thunkAPI.rejectWithValue(error);
        
     }}
 )

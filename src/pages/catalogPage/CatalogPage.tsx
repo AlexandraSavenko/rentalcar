@@ -5,14 +5,16 @@ import { type AppDispatch } from '../../redux/store'
 import CarsList from '../../components/carsList/CarsList'
 import Filters from '../../components/filters/Filters'
 
-import { selectThisBrand } from '../../redux/filters/selectors'
+import { selectThisBrand, selectThisPrice } from '../../redux/filters/selectors'
 
 const CatalogPage = () => {
    const dispatch = useDispatch<AppDispatch>()
   const brand = useSelector(selectThisBrand)
+  const rentalPrice = useSelector(selectThisPrice)
+  // console.log(rentalPrice)
    useEffect(() => {
-    dispatch(getAllCars({ brand }))
-  },[dispatch, brand])
+    dispatch(getAllCars({ brand, rentalPrice }))
+  },[dispatch, brand, rentalPrice])
   return (
     <div className={`container`}>
       <Filters/>
