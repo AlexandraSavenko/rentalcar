@@ -22,7 +22,7 @@ const totalCars = useSelector(selectTotalCars)
   return (
     <div className={`container`}>
       <Filters/>
-      <p>{totalCars}</p>
+      <p>Total cars: {totalCars}</p>
       <CarsList/>
       <Button/>
     </div>

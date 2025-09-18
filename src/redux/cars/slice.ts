@@ -29,8 +29,7 @@ export const slice = createSlice({
       .addCase(getAllCars.fulfilled, (state, action) => {
         state.isLoading = false;
         const { cars, page, totalCars, totalPages } = action.payload;
-        console.log(page, totalPages)
-        console.log(cars)
+        console.log(cars.length)
         state.allCars = Number(page) === 1 ? cars : [...state.allCars, ...cars];
         state.page = Number(page);
         state.totalCars = totalCars;
