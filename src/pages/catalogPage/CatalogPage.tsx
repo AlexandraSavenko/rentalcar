@@ -14,8 +14,8 @@ const CatalogPage = () => {
   const brand = useSelector(selectThisBrand)
   const rentalPrice = useSelector(selectThisPrice)
 const page = useSelector(selectPage)
+console.log("catalog: ", page)
 const totalCars = useSelector(selectTotalCars)
-  console.log(rentalPrice)
    useEffect(() => {
     dispatch(getAllCars({ brand, rentalPrice, page  }))
   },[dispatch, brand, rentalPrice, page])
@@ -23,7 +23,7 @@ const totalCars = useSelector(selectTotalCars)
     <div className={`container`}>
       <Filters/>
       <p>{totalCars}</p>
-      {/* <CarsList/> */}
+      <CarsList/>
       <Button/>
     </div>
   )

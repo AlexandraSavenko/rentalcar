@@ -15,6 +15,10 @@ export const slice = createSlice({
     setNextPage: (state) => {
       console.log(typeof state.page)
       state.page = state.page += 1;
+    },
+    resetCars: (state) => {
+      state.allCars = [];
+      state.page = 1;
     }
   },
   extraReducers: (builder) => {
@@ -25,8 +29,10 @@ export const slice = createSlice({
       .addCase(getAllCars.fulfilled, (state, action) => {
         state.isLoading = false;
         const { cars, page, totalCars, totalPages } = action.payload;
-        state.allCars = [...state.allCars, ...cars];
-        state.page = page;
+        console.log(page, totalPages)
+        console.log(cars)
+        state.allCars = Number(page) === 1 ? cars : [...state.allCars, ...cars];
+        state.page = Number(page);
         state.totalCars = totalCars;
         state.totalPages = totalPages;
       })
@@ -46,4 +52,4 @@ export const slice = createSlice({
 });
 
 export default slice.reducer;
-export const {addToFav,deleteFromFav, setNextPage} = slice.actions;
+export const {addToFav,deleteFromFav, setNextPage, resetCars} = slice.actions;

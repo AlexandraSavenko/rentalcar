@@ -5,6 +5,7 @@ import FilterInput from '../filterInput/FilterInput'
 import { changeBrandFilter,changePriceFilter, resetFilters } from '../../redux/filters/slice'
 import { getBrands } from '../../redux/filters/operations'
 import type { AppDispatch } from '../../redux/store'
+import { resetCars } from '../../redux/cars/slice'
 
 
 
@@ -23,11 +24,13 @@ const handleDispatchBrand = (e: React.ChangeEvent<HTMLSelectElement>) => {
   const filterValue = e.target.value;
   setselectedBrand(filterValue)
 dispatch(changeBrandFilter(filterValue))
+dispatch(resetCars())
 }
 const handleDispatchPrice = (e: React.ChangeEvent<HTMLSelectElement>) => {
   const filterValue = e.target.value;
   setSelectedPrice(filterValue)
 dispatch(changePriceFilter(filterValue))
+dispatch(resetCars())
 }
 
 const handleResetFilters = () => {

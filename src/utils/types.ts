@@ -63,5 +63,5 @@ export interface CarFilterParams {
   minMileage?: string;
   maxMileage?: string;
   limit?: string;
-  page?: string;
+  page?: number;
 }
