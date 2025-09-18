@@ -12,7 +12,7 @@ export const slice = createSlice({
     },
     changePriceFilter: (state, action) => {
       state.thisPrice = action.payload
-      console.log(action.payload)
+      console.log(typeof action.payload)
     },
     resetFilters: (state) => {
       state.thisBrand = "";

@@ -11,6 +11,10 @@ export const slice = createSlice({
     },
     deleteFromFav: (state, action) => {
       state.favorites = state.favorites.filter(el => el != action.payload)
+    },
+    setNextPage: (state) => {
+      console.log(typeof state.page)
+      state.page = state.page += 1;
     }
   },
   extraReducers: (builder) => {
@@ -21,7 +25,7 @@ export const slice = createSlice({
       .addCase(getAllCars.fulfilled, (state, action) => {
         state.isLoading = false;
         const { cars, page, totalCars, totalPages } = action.payload;
-        state.allCars = cars;
+        state.allCars = [...state.allCars, ...cars];
         state.page = page;
         state.totalCars = totalCars;
         state.totalPages = totalPages;
@@ -42,4 +46,4 @@ export const slice = createSlice({
 });
 
 export default slice.reducer;
-export const {addToFav,deleteFromFav} = slice.actions;
+export const {addToFav,deleteFromFav, setNextPage} = slice.actions;

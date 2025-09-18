@@ -13,7 +13,7 @@ export const carsInitialState: CarsInitialState = {
 
 export const filtersInitialState: BrandsInitialState = {
     thisBrand: "",
-    thisPrice: "0",
+    thisPrice: "",
     milesFrom: 0,
     milesTo: 0,
     brands: [],
