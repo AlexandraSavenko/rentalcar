@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { selectCarDetails } from "../../redux/cars/selectors";
 import css from "./CarPage.module.css";
 import FavButton from "../../components/favButton/FavButton";
+import CarOrderFrom from "../../components/carOrderForm/CarOrder.Form";
 
 const CarPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -25,6 +26,7 @@ const CarPage = () => {
       <div className={css.imageWrap}>
         <img src={car.img} alt={car.description} />
        { id && <FavButton id={id}/>}
+       <CarOrderFrom/>
       </div>
       <div className={css.infoWrap}>
         <h3>

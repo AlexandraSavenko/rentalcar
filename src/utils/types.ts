@@ -69,5 +69,6 @@ export interface CarFilterParams {
 export interface FromValues {
   name: string;
   email: string;
+  bookingDate: string,
   comment: string;
 }

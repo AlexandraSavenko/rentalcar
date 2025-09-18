@@ -21,3 +21,10 @@ export const filtersInitialState: BrandsInitialState = {
     
 }
 
+export const formValues = {
+  name: "",
+  email: "",
+  bookingDate: "",
+  comment: "",
+};
+

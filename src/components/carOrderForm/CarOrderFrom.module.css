@@ -1,0 +1,53 @@
+.formWrap {
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+  padding: 32px;
+  width: 640px;
+  height: 488px;
+  margin-top: 40px;
+}
+
+.formWrap h4 {
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--main);
+}
+
+.formWrap p {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--gray);
+  margin-bottom: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.forminput {
+    border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  width: 576px;
+  height: 48px;
+  background: var(--inputs);
+}
+.formInput::placeholder {
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--gray);
+}
+
+.sendBtn{
+    display: block;
+    border-radius: 12px;
+padding: 12px 51px;
+width: 156px;
+height: 44px;
+background: var(--button);
+font-weight: 600;
+font-size: 16px;
+color: var(--white);
+margin: 0 auto;
+}
