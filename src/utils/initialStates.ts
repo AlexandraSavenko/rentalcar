@@ -28,3 +28,10 @@ export const formValues = {
   comment: "",
 };
 
+export const filterInitValues = {
+  brand: "",
+  rentalPrice: "",
+  milesFrom: "",
+  milesTo: "",
+}
+

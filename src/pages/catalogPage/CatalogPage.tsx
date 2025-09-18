@@ -14,7 +14,6 @@ const CatalogPage = () => {
   const brand = useSelector(selectThisBrand)
   const rentalPrice = useSelector(selectThisPrice)
 const page = useSelector(selectPage)
-console.log("catalog: ", page)
 const totalCars = useSelector(selectTotalCars)
    useEffect(() => {
     dispatch(getAllCars({ brand, rentalPrice, page  }))

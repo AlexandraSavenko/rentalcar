@@ -50,11 +50,11 @@ export interface BrandsInitialState {
   isLoading: boolean;
 }
 
+
+
 export interface FilterSelectProps {
-  name: string;
-  filter: string[];
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  name: string,
+  options: string[]
 }
 
 export interface CarFilterParams {
