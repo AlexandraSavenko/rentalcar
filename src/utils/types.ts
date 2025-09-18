@@ -65,3 +65,9 @@ export interface CarFilterParams {
   limit?: string;
   page?: number;
 }
+
+export interface FromValues {
+  name: string;
+  email: string;
+  comment: string;
+}
