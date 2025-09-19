@@ -1,4 +1,4 @@
-import type { BrandsInitialState, CarsInitialState } from "./types";
+import type { BrandsInitialState, CarsInitialState, FormFilterValues, FromOrderValues } from "./types";
 
 export const carsInitialState: CarsInitialState = {
     allCars: [],
@@ -21,14 +21,14 @@ export const filtersInitialState: BrandsInitialState = {
     
 }
 
-export const formValues = {
+export const formValues: FromOrderValues = {
   name: "",
   email: "",
   bookingDate: "",
   comment: "",
 };
 
-export const filterInitValues = {
+export const filterInitValues: FormFilterValues = {
   brand: "",
   rentalPrice: "",
   milesFrom: "",

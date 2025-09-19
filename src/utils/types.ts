@@ -66,9 +66,16 @@ export interface CarFilterParams {
   page?: number;
 }
 
-export interface FromValues {
+export interface FromOrderValues {
   name: string;
   email: string;
   bookingDate: string,
   comment: string;
+}
+
+export interface FormFilterValues {
+  brand: string,
+  rentalPrice: string,
+  milesFrom: string,
+  milesTo: string,
 }

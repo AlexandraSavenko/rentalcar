@@ -6,10 +6,11 @@ import { resetFilters, setQueryFilters } from '../../redux/filters/slice'
 import { getBrands } from '../../redux/filters/operations'
 import type { AppDispatch } from '../../redux/store'
 // import { resetCars } from '../../redux/cars/slice'
-import { Formik, Form } from 'formik'
-import { getAllCars } from '../../redux/cars/operations'
+import { Formik, Form, type FormikHelpers } from 'formik'
 import FilterSelect from '../filterSelect/FilterSelect'
 import { filterInitValues } from '../../utils/initialStates'
+import type { FormFilterValues } from '../../utils/types'
+import css from "./Filters.module.css"
 
 
 
@@ -39,16 +40,14 @@ useEffect(() => {
 
 
 
-const handleSubmitFilters = (values) => {
+const handleSubmitFilters = (values: FormFilterValues, action: FormikHelpers<FormFilterValues>) => {
   console.log(values)
   dispatch(setQueryFilters(values))
+  action.resetForm()
 // dispatch(getAllCars({...values, page: 1}))
 }
 const handleResetFilters = () => {
   dispatch(resetFilters())
-  
-  // setselectedBrand("")
-  // setSelectedPrice("")
 }
   return (
     <div>
@@ -59,11 +58,11 @@ const handleResetFilters = () => {
       <FilterSelect name="brand" options={brands} />
       <FilterSelect name="price" options={prices} />
       
-<button type='submit'>Search</button>
+<button className={css.filterBtn} type='submit'>Search</button>
 </Form>
       </Formik>
       
-    <button onClick={handleResetFilters}>Reset Filters</button>
+    <button className={css.filterBtn} onClick={handleResetFilters}>Reset Filters</button>
     </div>
   )
 }
