@@ -64,8 +64,13 @@ font-weight: 600;
 font-size: 16px;
 line-height: 125%;
 color: var(--white);
+  transition: all 0.5s ease-in;
 }
 
+.link:hover{
+  background: var(--button-hover);
+
+}
 /* .favBtn{
 position: absolute;
 right: 16px;

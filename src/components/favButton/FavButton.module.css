@@ -2,17 +2,19 @@
 position: absolute;
 right: 16px;
 top: 16px;
+
 }
 .icon{
   
   width: 16px;
   height: 16px;
   stroke: var(--white);
-  
+  transition: all 1s ease-in;
+
 }
 
 .isFav{
   stroke: var(--button);
   fill: var(--button);
-  background-color: var(--button);
+  /* background-color: var(--button); */
 }

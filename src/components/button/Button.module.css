@@ -1,6 +1,6 @@
 .lmBtn{
     display: block;
-    border: 1px solid var(--button-hover);
+    border: 1px solid var(--button);
 border-radius: 12px;
 padding: 12px;
 width: 156px;
@@ -9,8 +9,13 @@ font-weight: 600;
 font-size: 16px;
 color: var(--main);
 margin: 0 auto 124px;
+transition: all 1s ease-in;
 }
 
+.lmBtn:hover{
+        border: 1px solid var(--button-hover);
+
+}
 .disable{
     display: none;
 }

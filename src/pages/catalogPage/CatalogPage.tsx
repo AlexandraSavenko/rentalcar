@@ -8,6 +8,7 @@ import Filters from '../../components/filters/Filters'
 import { selectThisBrand, selectThisPrice } from '../../redux/filters/selectors'
 import { selectPage, selectTotalCars } from '../../redux/cars/selectors'
 import Button from '../../components/button/Button'
+import css from "./CatalogPage.module.css"
 
 const CatalogPage = () => {
    const dispatch = useDispatch<AppDispatch>()
@@ -19,7 +20,7 @@ const totalCars = useSelector(selectTotalCars)
     dispatch(getAllCars({ brand, rentalPrice, page  }))
   },[dispatch, brand, rentalPrice, page])
   return (
-    <div className={`container`}>
+    <div className={`${css.catalogWrap} container`}>
       <Filters/>
       <p>Total cars: {totalCars}</p>
       <CarsList/>
