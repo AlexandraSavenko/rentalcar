@@ -1,32 +1,21 @@
-// import React from 'react'
-// import css from "./FilterInput.module.css"
+import React from 'react'
+import css from "./FilterInput.module.css"
+import { Field } from 'formik';
 
-// interface FilterSelectProps {
-//   name: string;
+interface FilterInputProps {
+  name: string;
 //   filter: string[];
 //   value: string;
 //   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-// }
-// const FilterInput: React.FC<FilterSelectProps> = ({name, filter, value, onChange}) => {
-//   return (
-//     <>
-//       <select
-//                   className={css.filtersInputCategory}
-//                   name={name}
-//                   value={value}
-//                   onChange={onChange}
-//                 >
-//                   <option key="exp-categories" value="" disabled>
-//                     Choose a {name}
-//                   </option>
-//                   {filter.map((el, i) => (
-//                     <option key={i} value={el}>
-//                       {el}
-//                     </option>
-//                   ))}
-//                 </select>
-//     </>
-//   )
-// }
+}
+const FilterInput: React.FC<FilterInputProps> = ({name}) => {
+    const placeholder = name === "milesTo" ? "To" : "From"
+  return (
+    <div className={css.inputWrap}>
+    <Field id={name} as="input" name={name} className={`${css.filterMiles} ${name === "milesTo" ? css.to : css.from}`}/>
+    <label htmlFor={name}>{placeholder}</label>
+</div>
+  )
+}
 
-// export default FilterInput
+export default FilterInput

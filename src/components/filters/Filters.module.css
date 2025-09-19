@@ -1,0 +1,28 @@
+.filtersWrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 8px 0;
+}
+.filtersForm{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.milesWrap{
+    display: flex;
+}
+.filterBtn {
+    border-radius: 12px;
+padding: 12px;
+width: 156px;
+height: 44px;
+background: var(--button);
+font-weight: 600;
+font-size: 16px;
+color: var(--white);
+}
+
+.filterBtn:hover{
+    background: var(--button-hover);
+}

@@ -1,0 +1,32 @@
+.inputWrap {
+  position: relative;
+}
+
+.filterMiles {
+    border: none;
+  border-radius: 12px 0 0 12px;
+  width: 160px;
+  height: 44px;
+  background: var(--inputs);
+  padding: 12px 64px;
+}
+.filterMiles:hover, .filterMiles:focus{
+    outline: none;
+}
+.inputWrap label {
+  position: absolute;
+  top: 12px;
+  left: 24px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 125%;
+  color: var(--main);
+}
+.from, .from:hover, .from:focus{
+      border-right: 1px solid var(--gray-light);
+}
+.to {
+  border-radius: 0 12px 12px 0;
+  padding: 12px 44px;
+}

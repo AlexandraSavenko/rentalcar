@@ -75,7 +75,7 @@ export interface FromOrderValues {
 
 export interface FormFilterValues {
   brand: string,
-  rentalPrice: string,
+  price: string,
   milesFrom: string,
   milesTo: string,
 }

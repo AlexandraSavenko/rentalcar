@@ -30,7 +30,7 @@ export const formValues: FromOrderValues = {
 
 export const filterInitValues: FormFilterValues = {
   brand: "",
-  rentalPrice: "",
+  price: "",
   milesFrom: "",
   milesTo: "",
 }

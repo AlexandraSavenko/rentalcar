@@ -11,6 +11,7 @@ import FilterSelect from '../filterSelect/FilterSelect'
 import { filterInitValues } from '../../utils/initialStates'
 import type { FormFilterValues } from '../../utils/types'
 import css from "./Filters.module.css"
+import FilterInput from '../filterInput/FilterInput'
 
 
 
@@ -50,13 +51,16 @@ const handleResetFilters = () => {
   dispatch(resetFilters())
 }
   return (
-    <div>
+    <div className={css.filtersWrap}>
       <Formik initialValues={filterInitValues} onSubmit={handleSubmitFilters}>
-<Form>
-  {/* <FilterInput name="brand" filter={brands} value={selectedBrand} onChange={handleDispatchBrand}/>
-      <FilterInput name="price" filter={prices} value={selectedPrice} onChange={handleDispatchPrice}/> */}
+<Form className={css.filtersForm}>
+
       <FilterSelect name="brand" options={brands} />
       <FilterSelect name="price" options={prices} />
+      <div className={css.milesWrap}>
+        <FilterInput name="milesFrom"/>
+        <FilterInput name="milesTo"/>
+      </div>
       
 <button className={css.filterBtn} type='submit'>Search</button>
 </Form>

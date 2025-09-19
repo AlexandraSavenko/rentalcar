@@ -11,7 +11,7 @@ Choose a {name}
       </option>
       {
         options.map((el, i) => (
-            <option key={i} value={el}>{el}</option>
+            <option className={css.selectOption} key={i} value={el}>{el}</option>
         ))
       }
     </Field>
