@@ -1,4 +1,3 @@
-import React from 'react'
 import CarCard from '../carCard/CarCard'
 import { useSelector } from 'react-redux'
 import { selectAllCars } from '../../redux/cars/selectors';

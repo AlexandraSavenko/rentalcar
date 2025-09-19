@@ -79,3 +79,18 @@ export interface FormFilterValues {
   milesFrom: string,
   milesTo: string,
 }
+
+export interface FilterInputProps {
+  name: string;
+}
+
+export interface FavButtonProps {
+    id: string
+}
+
+export interface orderFromValues {
+  name: string,
+  email: string,
+  bDate: string,
+  comment: string
+}

@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorits } from '../../redux/cars/selectors';
 import { addToFav, deleteFromFav } from '../../redux/cars/slice';
 import css from "./FavButton.module.css"
+import type { FavButtonProps } from '../../utils/types';
 
-interface FavButtonProps {
-    id: string
-}
+
 const FavButton: React.FC<FavButtonProps> = ({id}) => {
     const dispatch = useDispatch()
   const favorites = useSelector(selectFavorits)

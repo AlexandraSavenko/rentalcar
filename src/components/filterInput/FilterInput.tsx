@@ -1,13 +1,9 @@
 import React from 'react'
 import css from "./FilterInput.module.css"
 import { Field } from 'formik';
+import type { FilterInputProps } from '../../utils/types';
 
-interface FilterInputProps {
-  name: string;
-//   filter: string[];
-//   value: string;
-//   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
-}
+
 const FilterInput: React.FC<FilterInputProps> = ({name}) => {
     const placeholder = name === "milesTo" ? "To" : "From"
   return (

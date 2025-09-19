@@ -21,7 +21,7 @@ export const filtersInitialState: BrandsInitialState = {
     
 }
 
-export const formValues: FromOrderValues = {
+export const formOrderValues: FromOrderValues = {
   name: "",
   email: "",
   bookingDate: "",

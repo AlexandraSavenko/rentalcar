@@ -1,9 +1,10 @@
-import React from "react";
 import css from "./CarOrderFrom.module.css";
 import { ErrorMessage, Field, Form, Formik, type FormikHelpers } from "formik";
 import * as Yup from "yup";
-import type { FromValues } from "../../utils/types";
-import { formValues } from "../../utils/initialStates";
+import { formOrderValues } from "../../utils/initialStates";
+import type { FromOrderValues } from "../../utils/types";
+
+
 
 export const FormSchema = Yup.object().shape({
   name: Yup.string().required("Please enter your name"),
@@ -16,8 +17,8 @@ export const FormSchema = Yup.object().shape({
 
 const CarOrderFrom = () => {
   const handleSubmit = (
-    values: FromValues,
-    actions: FormikHelpers<FromValues>
+    values: FromOrderValues,
+    actions: FormikHelpers<FromOrderValues>
   ): void => {
     console.log(values);
     actions.resetForm();
@@ -28,7 +29,7 @@ const CarOrderFrom = () => {
       <p>Stay connected! We are always ready to help you.</p>
       <Formik
         validationSchema={FormSchema}
-        initialValues={formValues}
+        initialValues={formOrderValues}
         onSubmit={handleSubmit}
       >
         <Form className={css.form}>
