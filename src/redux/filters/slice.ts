@@ -7,13 +7,6 @@ export const slice = createSlice({
   name: "filters",
   initialState: filtersInitialState,
   reducers: {
-    // changeBrandFilter: (state, action) => {
-    //     state.thisBrand = action.payload
-    // },
-    // changePriceFilter: (state, action) => {
-    //   state.thisPrice = action.payload
-    //   console.log(typeof action.payload)
-    // },
     setQueryFilters: (state, action) => {
       const {brand, rentalPrice, milesFrom, milesTo,} = action.payload;
       state.thisBrand = brand;
@@ -24,8 +17,6 @@ export const slice = createSlice({
     resetFilters: (state) => {
       state.thisBrand = "";
     state.thisPrice = "";
-    // state.milesFrom = 0;
-    // state.milesTo = 0;
     }
   },
   extraReducers: (builder) =>
