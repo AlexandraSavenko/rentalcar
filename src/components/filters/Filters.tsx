@@ -26,7 +26,6 @@ const Filters = () => {
     values: FormFilterValues,
     action: FormikHelpers<FormFilterValues>
   ) => {
-    console.log(values);
     dispatch(setQueryFilters(values));
     action.resetForm();
   };

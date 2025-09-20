@@ -11,12 +11,13 @@ export const getAllCars = createAsyncThunk<carsPayload, CarFilterParams>(
     try {
       const { brand, rentalPrice, minMileage, maxMileage, limit, page } =
         params;
+        console.log(params)
       const paramsObj: Record<string, string> = {};
       if (page !== undefined) paramsObj.page = page.toString();
       if (brand) paramsObj.brand = brand;
       if (rentalPrice) paramsObj.rentalPrice = rentalPrice;
-      if (minMileage) paramsObj.minMileage = minMileage;
-      if (maxMileage) paramsObj.maxMileage = maxMileage;
+      if (minMileage) paramsObj.minMileage = minMileage.toString();
+      if (maxMileage) paramsObj.maxMileage = maxMileage.toString();
       if (limit) paramsObj.limit = limit;
       const query = new URLSearchParams(paramsObj);
       const res = await axios.get(`/cars?${query}`);

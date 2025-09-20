@@ -60,8 +60,8 @@ export interface FilterSelectProps {
 export interface CarFilterParams {
   brand?: string;
   rentalPrice?: string;
-  minMileage?: string;
-  maxMileage?: string;
+  minMileage?: number;
+  maxMileage?: number;
   limit?: string;
   page?: number;
 }
