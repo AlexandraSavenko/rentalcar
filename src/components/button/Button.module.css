@@ -8,7 +8,7 @@
   height: 44px;
   font-weight: 600;
   font-size: 16px;
-  color: var(--main);
+  color: var(--white);
   margin: 0 auto 124px;
   transition: all 0.5s ease-in;
 }
