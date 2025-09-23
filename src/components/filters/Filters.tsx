@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectBrands } from "../../redux/filters/selectors";
+import { selectBrands, selectFilterLoading } from "../../redux/filters/selectors";
 import { resetFilters, setQueryFilters } from "../../redux/filters/slice";
 import { getBrands } from "../../redux/filters/operations";
 import type { AppDispatch } from "../../redux/store";
@@ -10,8 +10,10 @@ import { filterInitValues } from "../../utils/initialStates";
 import type { FormFilterValues } from "../../utils/types";
 import css from "./Filters.module.css";
 import FilterInput from "../filterInput/FilterInput";
+import Loader from "../loader/Loader";
 
 const Filters = () => {
+  const filterLoading = useSelector(selectFilterLoading)
   const brands = useSelector(selectBrands);
   const prices = new Array(8)
     .fill(0)
@@ -32,8 +34,10 @@ const Filters = () => {
   const handleResetFilters = () => {
     dispatch(resetFilters());
   };
+  
   return (
-    <div className={css.filtersWrap}>
+    filterLoading ? <Loader/>  :
+    (<div className={css.filtersWrap}>
       <Formik initialValues={filterInitValues} onSubmit={handleSubmitFilters}>
         <Form className={css.filtersForm}>
           <FilterSelect name="brand" options={brands} />
@@ -52,7 +56,7 @@ const Filters = () => {
       <button className={css.filterBtn} onClick={handleResetFilters}>
         Reset Filters
       </button>
-    </div>
+    </div>)
   );
 };
 

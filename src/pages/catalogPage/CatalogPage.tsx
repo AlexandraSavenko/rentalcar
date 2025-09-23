@@ -10,6 +10,7 @@ import { selectPage, selectTotalCars } from '../../redux/cars/selectors'
 import Button from '../../components/button/Button'
 import css from "./CatalogPage.module.css"
 
+
 const CatalogPage = () => {
    const dispatch = useDispatch<AppDispatch>()
   const brand = useSelector(selectThisBrand)

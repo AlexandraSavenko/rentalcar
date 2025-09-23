@@ -29,3 +29,12 @@ color: var(--white);
 .filterBtn:hover{
     background: var(--button-hover);
 }
+
+/* .loading {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 8px;
+} */
+
+

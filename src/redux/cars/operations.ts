@@ -11,7 +11,6 @@ export const getAllCars = createAsyncThunk<carsPayload, CarFilterParams>(
     try {
       const { brand, rentalPrice, minMileage, maxMileage, limit, page } =
         params;
-        console.log(params)
       const paramsObj: Record<string, string> = {};
       if (page !== undefined) paramsObj.page = page.toString();
       if (brand) paramsObj.brand = brand;
