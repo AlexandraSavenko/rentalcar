@@ -20,3 +20,6 @@ The project was built as part of my **Fullstack Developer learning path**.
 - **Routing**: React Router   
 
 ---
+<a href="https://www.figma.com/design/A25LdVK3gZOPJaedrkTwWQ/Rental-Car?node-id=0-1&p=f" target="_blank">Figma design</a>
+<a href="https://car-rental-api.goit.global/api-docs" target="_blank">Back-end docs</a>
+
